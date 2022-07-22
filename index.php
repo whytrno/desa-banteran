@@ -5,7 +5,7 @@ if (!isset($_GET['page'])) {
     include 'template/beranda.php';
 } else {
     $page = $_GET['page'];
-    include $page . '.php';
+    include 'main/' . $page . '.php';
 }
 ?>
 
