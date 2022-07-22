@@ -55,23 +55,23 @@
                 </div>
             </div>
             <div x-data="{layanan: false, tentang: false}" class="hidden md:block md:flex space-x-10 text-lg text-[#5c6b74]">
-                <a href="?page=beranda" class="font-bold text-[#182126]">Beranda</a>
-                <a href="?page=berita" class="hover:text-[#182126]">Berita</a>
-                <a href="?page=program" class="hover:text-[#182126]">Program</a>
+                <a href="?page=beranda" class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 font-bold">Beranda</a>
+                <a href="?page=berita" class="bg-white inline-block py-2 px-4 hover:text-[#182126] rounded hover:border-gray-200 hover:bg-gray-200 font-semibold">Berita</a>
+                <a href="?page=program" class="bg-white inline-block py-2 px-4 hover:text-[#182126] rounded hover:border-gray-200 hover:bg-gray-200 font-semibold">Program</a>
                 <div class="relative">
-                    <button @click="layanan = true, tentang = false" class="hover:text-[#182126]">Layanan</button>
+                    <button @click="layanan = true, tentang = false" class="bg-white inline-block py-2 px-4 hover:text-[#182126] rounded hover:border-gray-200 hover:bg-gray-200 font-semibold">Layanan</button>
 
-                    <div x-show="layanan" class="bg-[#008644] text-white grid w-min whitespace-nowrap px-5 py-2 space-y-2 right-0 absolute top-10 z-50">
-                        <a href="?page=fasilitas" class="text-white hover:text-[#5dffae]">Fasilitas</a>
-                        <a href="?page=layanan" class="text-white hover:text-[#5dffae]">Layanan Desa</a>
+                    <div x-show="layanan" class="bg-gray-200 text-white grid w-min whitespace-nowrap px-5 py-2 space-y-2 right-0 absolute top-10 z-50">
+                        <a href="?page=fasilitas" class="text-[#5c6b74] hover:text-[#182126]">Fasilitas</a>
+                        <a href="?page=layanan" class="text-[#5c6b74] hover:text-[#182126]">Layanan Desa</a>
                     </div>
                 </div>
                 <div class="relative">
-                    <button @click="tentang = true, layanan = false" class="hover:text-[#182126]">Tentang Desa</button>
+                    <button @click="tentang = true, layanan = false" class="bg-white inline-block py-2 px-4 hover:text-[#182126] rounded hover:border-gray-200 hover:bg-gray-200 font-semibold">Tentang Desa</button>
 
-                    <div x-show="tentang" class="bg-[#008644] text-white grid w-min whitespace-nowrap px-5 py-2 space-y-2 right-0 absolute top-10 z-50">
-                        <a href="?page=tentang" class="text-white hover:text-[#5dffae]">Tentang Kami</a>
-                        <a href="?page=struktur" class="text-white hover:text-[#5dffae]">Struktur Organisasi</a>
+                    <div x-show="tentang" class="bg-gray-200 text-white grid w-min whitespace-nowrap px-5 py-2 space-y-2 right-0 absolute top-10 z-50">
+                        <a href="?page=tentang" class="text-[#5c6b74] hover:text-[#182126]">Tentang Kami</a>
+                        <a href="?page=struktur" class="text-[#5c6b74] hover:text-[#182126]">Struktur Organisasi</a>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,9 @@
-<?php include 'koneksi.php'; ?>
+<?php include 'config/koneksi.php'; ?>
 <?php include 'template/header.php'; ?>
 
 <?php
 if (!isset($_GET['page'])) {
-    include 'template/beranda.php';
+    include 'main/beranda.php';
 } else {
     $page = $_GET['page'];
     include 'main/' . $page . '.php';
