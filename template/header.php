@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div x-data="{layanan: false, tentang: false}" class="hidden md:block md:flex space-x-10 text-lg text-[#5c6b74]">
-                <a href="?page=beranda" class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 font-bold">Beranda</a>
+                <a href="?page=beranda" class="bg-white inline-block border-l border-t border-r rounded-thover:text-[#182126] rounded hover:border-gray-200 hover:bg-gray-200 py-2 px-4 font-bold">Beranda</a>
                 <a href="?page=berita" class="bg-white inline-block py-2 px-4 hover:text-[#182126] rounded hover:border-gray-200 hover:bg-gray-200 font-semibold">Berita</a>
                 <a href="?page=program" class="bg-white inline-block py-2 px-4 hover:text-[#182126] rounded hover:border-gray-200 hover:bg-gray-200 font-semibold">Program</a>
                 <div class="relative">
