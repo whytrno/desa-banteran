@@ -1,3 +1,4 @@
+<?php include 'koneksi.php'; ?>
 <?php include 'template/header.php'; ?>
 
 <?php

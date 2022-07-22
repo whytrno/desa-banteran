@@ -15,38 +15,17 @@
             <button class="text-[#182126]">Fasilitas Desa</button>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
-            <div class="space-y-2 md:space-y-5">
-                <img src="assets/img/fasilitas/Djoglo_Banteran.jpg" alt="">
-                <h5 class="text-center text-xl">Djoglo Banteran</h5>
-            </div>
-            <div class="space-y-2 md:space-y-5">
-                <img src="assets/img/fasilitas/Djoglo_Banteran.jpg" alt="">
-                <h5 class="text-center text-xl">Djoglo Banteran</h5>
-            </div>
-            <div class="space-y-2 md:space-y-5">
-                <img src="assets/img/fasilitas/Djoglo_Banteran.jpg" alt="">
-                <h5 class="text-center text-xl">Djoglo Banteran</h5>
-            </div>
-            <div class="space-y-2 md:space-y-5">
-                <img src="assets/img/fasilitas/Djoglo_Banteran.jpg" alt="">
-                <h5 class="text-center text-xl">Djoglo Banteran</h5>
-            </div>
-            <div class="space-y-2 md:space-y-5">
-                <img src="assets/img/fasilitas/Djoglo_Banteran.jpg" alt="">
-                <h5 class="text-center text-xl">Djoglo Banteran</h5>
-            </div>
-            <div class="space-y-2 md:space-y-5">
-                <img src="assets/img/fasilitas/Djoglo_Banteran.jpg" alt="">
-                <h5 class="text-center text-xl">Djoglo Banteran</h5>
-            </div>
-            <div class="space-y-2 md:space-y-5">
-                <img src="assets/img/fasilitas/Djoglo_Banteran.jpg" alt="">
-                <h5 class="text-center text-xl">Djoglo Banteran</h5>
-            </div>
-            <div class="space-y-2 md:space-y-5">
-                <img src="assets/img/fasilitas/Djoglo_Banteran.jpg" alt="">
-                <h5 class="text-center text-xl">Djoglo Banteran</h5>
-            </div>
+
+            <?php
+            $sql = mysqli_query($connection, "SELECT * FROM tb_fasilitas ORDER BY id_fasilitas");
+            $no = 1;
+            foreach ($sql as $data) : ?>
+                <div class="space-y-2 md:space-y-5">
+                    <img src="assets/img/fasilitas/<?= $data['img'] ?>" alt="" class="w-full h-full object-cover">
+                    <h5 class="text-center text-xl"><?= $data['img'] ?></h5>
+                </div>
+            <?php endforeach; ?>
+
         </div>
     </div>
 </body>

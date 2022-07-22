@@ -5,73 +5,28 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-16">
-        <div class="py-10 px-5 md:px-10 bg-white grid grid-cols-2 justify-items-end space-y-5">
-            <div class="col-span-2 lg:col-span-1 space-y-5">
-                <h5 class="rounded-3xl bg-[#BF5939] w-min whitespace-nowrap px-5 text-white md:text-sm lg:text-md">
-                    Forest</h5>
-                <h1 class="md:text-xl lg:text-2xl">VAKSINASI COVID-19</h1>
-                <div class="space-y-2">
-                    <p>Apr 12</p>
-                    <p>Melakukan vaksinasi covid-19 menjadi solusi paling tepat untuk mengendalikan jumlah kasus
-                        penyakit covid-19 yang sudah</p><br>
-                    <a href="#" class="text-[#008644]">Lihat Selengkapnya</a>
-                </div>
-            </div>
-            <div class="col-span-2 lg:col-span-1 w-full">
-                <img class="h-64 w-full lg:w-full object-cover" src="assets/img/berita/berita-desa-1.jpg" alt="">
-            </div>
-        </div>
 
-        <div class="py-10 px-5 md:px-10 bg-white grid grid-cols-2 justify-items-end space-y-5">
-            <div class="col-span-2 lg:col-span-1 space-y-5">
-                <h5 class="rounded-3xl bg-[#BF5939] w-min whitespace-nowrap px-5 text-white md:text-sm lg:text-md">
-                    Forest</h5>
-                <h1 class="md:text-xl lg:text-2xl">VAKSINASI COVID-19</h1>
-                <div class="space-y-2">
-                    <p>Apr 12</p>
-                    <p>Melakukan vaksinasi covid-19 menjadi solusi paling tepat untuk mengendalikan jumlah kasus
-                        penyakit covid-19 yang sudah</p><br>
-                    <a href="#" class="text-[#008644]">Lihat Selengkapnya</a>
+        <?php
+        $sql = mysqli_query($connection, "SELECT * FROM tb_berita ORDER BY id_berita DESC LIMIT 4");
+        $no = 1;
+        foreach ($sql as $data) : ?>
+            <div class="py-10 px-5 md:px-10 bg-white grid grid-cols-2 space-y-5">
+                <div class="col-span-2 lg:col-span-1 space-y-5 justify-items-start">
+                    <h5 class="rounded-3xl bg-[#BF5939] w-min whitespace-nowrap px-5 text-white md:text-sm lg:text-md">
+                        Forest</h5>
+                    <h1 class="md:text-xl lg:text-2xl"><?= $data['judul_berita'] ?></h1>
+                    <div class="space-y-2">
+                        <p><?= $data['tanggal'] ?></p>
+                        <p><?= substr($data['artikel_berita'], 0, 100) ?></p><br>
+                        <!-- <a href="#" class="text-[#008644]">Lihat Selengkapnya</a> -->
+                    </div>
+                </div>
+                <div class="col-span-2 lg:col-span-1 w-full justify-items-end">
+                    <img class="h-64 w-full lg:w-full object-cover" src="assets/img/berita/<?= $data['img'] ?>" alt="">
                 </div>
             </div>
-            <div class="col-span-2 lg:col-span-1 w-full">
-                <img class="h-64 w-full lg:w-full object-cover" src="assets/img/berita/berita-desa-1.jpg" alt="">
-            </div>
-        </div>
+        <?php endforeach; ?>
 
-        <div class="py-10 px-5 md:px-10 bg-white grid grid-cols-2 justify-items-end space-y-5">
-            <div class="col-span-2 lg:col-span-1 space-y-5">
-                <h5 class="rounded-3xl bg-[#BF5939] w-min whitespace-nowrap px-5 text-white md:text-sm lg:text-md">
-                    Forest</h5>
-                <h1 class="md:text-xl lg:text-2xl">VAKSINASI COVID-19</h1>
-                <div class="space-y-2">
-                    <p>Apr 12</p>
-                    <p>Melakukan vaksinasi covid-19 menjadi solusi paling tepat untuk mengendalikan jumlah kasus
-                        penyakit covid-19 yang sudah</p><br>
-                    <a href="#" class="text-[#008644]">Lihat Selengkapnya</a>
-                </div>
-            </div>
-            <div class="col-span-2 lg:col-span-1 w-full">
-                <img class="h-64 w-full lg:w-full object-cover" src="assets/img/berita/berita-desa-1.jpg" alt="">
-            </div>
-        </div>
-
-        <div class="py-10 px-5 md:px-10 bg-white grid grid-cols-2 justify-items-end space-y-5">
-            <div class="col-span-2 lg:col-span-1 space-y-5">
-                <h5 class="rounded-3xl bg-[#BF5939] w-min whitespace-nowrap px-5 text-white md:text-sm lg:text-md">
-                    Forest</h5>
-                <h1 class="md:text-xl lg:text-2xl">VAKSINASI COVID-19</h1>
-                <div class="space-y-2">
-                    <p>Apr 12</p>
-                    <p>Melakukan vaksinasi covid-19 menjadi solusi paling tepat untuk mengendalikan jumlah kasus
-                        penyakit covid-19 yang sudah</p><br>
-                    <a href="#" class="text-[#008644]">Lihat Selengkapnya</a>
-                </div>
-            </div>
-            <div class="col-span-2 lg:col-span-1 w-full">
-                <img class="h-64 w-full lg:w-full object-cover" src="assets/img/berita/berita-desa-1.jpg" alt="">
-            </div>
-        </div>
     </div>
 </div>
 
@@ -79,31 +34,13 @@
     <div class="flex justify-between text-[#182126] items-center border-b-2 pb-5 md:pb-8 border-[#C4C4C4]">
         <h1 class="text-xl md:text-3xl lg:text-4xl">Fasilitas Desa</h1>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-14 text-center">
-        <div class="col-span-1 space-y-4 lg:space-y-14">
-            <div class="space-y-4">
-                <!-- <h5 class="text-xl">Rumah makan Djoglo Banteran</h5> -->
-                <img class="h-[40vh] w-full object-cover" src="assets/img/fasilitas/Djoglo_Banteran.jpg" alt="">
-            </div>
-            <div class="space-y-4">
-                <!-- <h5 class="text-2xl">Lapangan Banteran</h5> -->
-                <img class="h-[40vh] w-full object-cover" src="assets/img/fasilitas/Lapangan_Banteran.jpg" alt="">
-            </div>
-        </div>
-        <div class="col-span-1 md:col-span-2">
-            <!-- <h5>Masjid Jami Al Hidayah Banteran</h5> -->
-            <img class="h-[90vh] w-full object-cover" src="assets/img/fasilitas/Masjid_Jami_Alhidayah.jpg" alt="">
-        </div>
-        <div class="col-span-1 space-y-4 lg:space-y-14">
-            <div class="space-y-4">
-                <!-- <h5 class="text-xl">Mts Maaruf Nu 1 Banteran</h5> -->
-                <img class="h-[40vh] w-full object-cover" src="assets/img/fasilitas/Mts_Maarif_Nu_1_Sumbang.jpg" alt="">
-            </div>
-            <div class="space-y-4">
-                <!-- <h5 class="text-xl">SDN Negeri 1 Banteran</h5> -->
-                <img class="h-[40vh] w-full object-cover" src="assets/img/fasilitas/SDN_1_Banteran.jpg" alt="">
-            </div>
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-14 text-center">
+        <?php
+        $sql = mysqli_query($connection, "SELECT * FROM tb_fasilitas ORDER BY id_fasilitas DESC LIMIT 4");
+        $no = 1;
+        foreach ($sql as $data) : ?>
+            <img src="assets/img/fasilitas/<?= $data['img'] ?>" alt="" class="w-full h-full object-cover">
+        <?php endforeach; ?>
     </div>
 </div>
 

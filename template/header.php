@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="dist/font.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/9138eb7436.js" crossorigin="anonymous"></script>
     <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
 </head>
 
@@ -23,7 +24,7 @@
                         <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
                     </svg>
                 </button>
-                <div x-show="mobileNav" class="h-54 w-[30vh] absolute top-10 -right-1 bg-white border">
+                <div x-show="mobileNav" class="h-54 w-[30vh] absolute top-10 -right-1 bg-white border z-50">
                     <div class="grid p-5 gap-2 text-md justify-start text-left text-[#5c6b74]">
                         <a href="?page=beranda" class="font-bold text-[#182126]">Beranda</a>
                         <a href="?page=berita" class="hover:text-[#182126]">Berita</a>
@@ -36,7 +37,7 @@
                             </a>
                             <div x-show="mobileLayanan" class="grid pt-1 gap-1 pl-5">
                                 <a href="?page=fasilitas" class="hover:text-[#182126]">Fasilitas</a>
-                                <a href="?page=tentang" class="hover:text-[#182126]">Tentang Desa</a>
+                                <a href="?page=tentang-desa" class="hover:text-[#182126]">Tentang Desa</a>
                             </div>
                         </div>
                         <div x-data="{mobileTentang: false}">
@@ -46,8 +47,8 @@
                                 </svg>
                             </a>
                             <div x-show="mobileTentang" class="grid pt-1 gap-1 pl-5">
-                                <a href="?page=tentang" class="hover:text-[#182126]">Tentang Kami</a>
-                                <a href="?page=struktur" class="hover:text-[#182126]">Struktur Organisasi</a>
+                                <a href="?page=tentang-kami" class="hover:text-[#182126]">Tentang Kami</a>
+                                <a href="?page=struktur-organisasi" class="hover:text-[#182126]">Struktur Organisasi</a>
                             </div>
                         </div>
                     </div>
@@ -76,7 +77,7 @@
             </div>
         </div>
 
-        <?php if (!isset($_GET['page'])) { ?>
+        <?php if (!isset($_GET['page']) || $_GET['page'] == 'beranda') { ?>
 
             <!-- HERO -->
             <div class="w-full">
@@ -92,7 +93,7 @@
                     <p class="text-[#182126]">Desa Banteran merupakan salah satu desa besar yang terletak di kecamatan
                         Sumbang, Kabupaten Banyumas
                     </p>
-                    <a href="#" class="flex items-center bg-[#008644] py-3 px-6 w-min whitespace-nowrap text-white">
+                    <a href="?page=tentang" class="flex items-center bg-[#008644] py-3 px-6 w-min whitespace-nowrap text-white">
                         Tentang kami
                     </a>
                 </div>
