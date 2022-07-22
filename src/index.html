@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/output.css" rel="stylesheet">
-    <link href="/dist/font.css" rel="stylesheet">
+    <link href="dist/font.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/9138eb7436.js" crossorigin="anonymous"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
@@ -17,7 +15,7 @@
         <!-- NAVBAR -->
         <div class="flex justify-between w-full items-center">
             <div class="flex justify-center">
-                <img class="h-[65px] w-[60px]" src="/assets/img/logo/desa-logo.jpg" alt="">
+                <img class="h-[65px] w-[60px]" src="assets/img/logo/desa-logo.jpg" alt="">
             </div>
             <div x-data="{mobileNav: false}" class="md:hidden border relative">
                 <button @click="mobileNav = ! mobileNav"
@@ -30,9 +28,9 @@
                 </button>
                 <div x-show="mobileNav" class="h-54 w-[30vh] absolute top-10 -right-1 bg-white border">
                     <div class="grid p-5 gap-2 text-md justify-start text-left text-[#5c6b74]">
-                        <a href="#" class="font-bold text-[#182126]">Beranda</a>
-                        <a href="#" class="hover:text-[#182126]">Berita</a>
-                        <a href="#" class="hover:text-[#182126]">Program</a>
+                        <a href="?page=beranda" class="font-bold text-[#182126]">Beranda</a>
+                        <a href="?page=berita" class="hover:text-[#182126]">Berita</a>
+                        <a href="?page=program" class="hover:text-[#182126]">Program</a>
                         <div x-data="{mobileLayanan: false}" class="relative">
                             <a href="#" @click="mobileLayanan = ! mobileLayanan"
                                 class="hover:text-[#182126] flex items-center gap-5">Layanan
@@ -42,8 +40,8 @@
                                 </svg>
                             </a>
                             <div x-show="mobileLayanan" class="grid pt-1 gap-1 pl-5">
-                                <a href="#" class="hover:text-[#182126]">Fasilitas</a>
-                                <a href="#" class="hover:text-[#182126]">Tentang Desa</a>
+                                <a href="?page=fasilitas" class="hover:text-[#182126]">Fasilitas</a>
+                                <a href="?page=tentang" class="hover:text-[#182126]">Tentang Desa</a>
                             </div>
                         </div>
                         <div x-data="{mobileTentang: false}">
@@ -55,8 +53,8 @@
                                 </svg>
                             </a>
                             <div x-show="mobileTentang" class="grid pt-1 gap-1 pl-5">
-                                <a href="#" class="hover:text-[#182126]">Tentang Kami</a>
-                                <a href="#" class="hover:text-[#182126]">Struktur Organisasi</a>
+                                <a href="?page=tentang" class="hover:text-[#182126]">Tentang Kami</a>
+                                <a href="?page=struktur" class="hover:text-[#182126]">Struktur Organisasi</a>
                             </div>
                         </div>
                     </div>
@@ -64,24 +62,24 @@
             </div>
             <div x-data="{layanan: false, tentang: false}"
                 class="hidden md:block md:flex space-x-10 text-lg text-[#5c6b74]">
-                <a href="#" class="font-bold text-[#182126]">Beranda</a>
-                <a href="#" class="hover:text-[#182126]">Berita</a>
-                <a href="program.html" class="hover:text-[#182126]">Program</a>
+                <a href="?page=beranda" class="font-bold text-[#182126]">Beranda</a>
+                <a href="?page=berita" class="hover:text-[#182126]">Berita</a>
+                <a href="?page=program" class="hover:text-[#182126]">Program</a>
                 <div class="relative">
                     <button @click="layanan = true, tentang = false" class="hover:text-[#182126]">Layanan</button>
 
                     <div x-show="layanan"
                         class="bg-[#008644] text-white grid w-min whitespace-nowrap px-5 py-2 space-y-2 right-0 absolute top-10">
-                        <a href="#" class="text-white hover:text-[#5dffae]">Fasilitas</a>
-                        <a href="#" class="text-white hover:text-[#5dffae]">Tentang Desa</a>
+                        <a href="?page=fasilitas" class="text-white hover:text-[#5dffae]">Fasilitas</a>
+                        <a href="?page=layanan" class="text-white hover:text-[#5dffae]">Layanan Desa</a>
                     </div>
                 </div>
                 <div class="relative">
                     <button @click="tentang = true, layanan = false" class="hover:text-[#182126]">Tentang Desa</button>
                     <div x-show="tentang"
                         class="bg-[#008644] text-white grid w-min whitespace-nowrap px-5 py-2 space-y-2 right-0 absolute top-10">
-                        <a href="#" class="text-white hover:text-[#5dffae]">Tentang Kami</a>
-                        <a href="#" class="text-white hover:text-[#5dffae]">Struktur Organisasi</a>
+                        <a href="?page=tentang" class="text-white hover:text-[#5dffae]">Tentang Kami</a>
+                        <a href="?page=struktur" class="text-white hover:text-[#5dffae]">Struktur Organisasi</a>
                     </div>
                 </div>
             </div>
@@ -89,7 +87,7 @@
 
         <!-- HERO -->
         <div class="w-full">
-            <img class="h-screen md:h-[35rem] px w-full object-cover" src="/assets/img/desa/desa-tugu.jpg" alt="">
+            <img class="h-screen md:h-[35rem] px w-full object-cover" src="assets/img/desa/desa-tugu.jpg" alt="">
         </div>
 
         <div class="w-full space-y-2 grid lg:grid-cols-4 md:grid-cols-5 justify-between items-center">
@@ -128,7 +126,7 @@
                     </div>
                 </div>
                 <div class="col-span-2 lg:col-span-1 w-full">
-                    <img class="h-64 w-full lg:w-full object-cover" src="/assets/img/berita/berita-desa-1.jpg" alt="">
+                    <img class="h-64 w-full lg:w-full object-cover" src="assets/img/berita/berita-desa-1.jpg" alt="">
                 </div>
             </div>
 
@@ -145,7 +143,7 @@
                     </div>
                 </div>
                 <div class="col-span-2 lg:col-span-1 w-full">
-                    <img class="h-64 w-full lg:w-full object-cover" src="/assets/img/berita/berita-desa-1.jpg" alt="">
+                    <img class="h-64 w-full lg:w-full object-cover" src="assets/img/berita/berita-desa-1.jpg" alt="">
                 </div>
             </div>
 
@@ -162,7 +160,7 @@
                     </div>
                 </div>
                 <div class="col-span-2 lg:col-span-1 w-full">
-                    <img class="h-64 w-full lg:w-full object-cover" src="/assets/img/berita/berita-desa-1.jpg" alt="">
+                    <img class="h-64 w-full lg:w-full object-cover" src="assets/img/berita/berita-desa-1.jpg" alt="">
                 </div>
             </div>
 
@@ -179,7 +177,7 @@
                     </div>
                 </div>
                 <div class="col-span-2 lg:col-span-1 w-full">
-                    <img class="h-64 w-full lg:w-full object-cover" src="/assets/img/berita/berita-desa-1.jpg" alt="">
+                    <img class="h-64 w-full lg:w-full object-cover" src="assets/img/berita/berita-desa-1.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -193,26 +191,26 @@
             <div class="col-span-1 space-y-4 lg:space-y-14">
                 <div class="space-y-4">
                     <!-- <h5 class="text-xl">Rumah makan Djoglo Banteran</h5> -->
-                    <img class="h-[40vh] w-full object-cover" src="/assets/img/fasilitas/Djoglo_Banteran.jpg" alt="">
+                    <img class="h-[40vh] w-full object-cover" src="assets/img/fasilitas/Djoglo_Banteran.jpg" alt="">
                 </div>
                 <div class="space-y-4">
                     <!-- <h5 class="text-2xl">Lapangan Banteran</h5> -->
-                    <img class="h-[40vh] w-full object-cover" src="/assets/img/fasilitas/Lapangan_Banteran.jpg" alt="">
+                    <img class="h-[40vh] w-full object-cover" src="assets/img/fasilitas/Lapangan_Banteran.jpg" alt="">
                 </div>
             </div>
             <div class="col-span-1 md:col-span-2">
                 <!-- <h5>Masjid Jami Al Hidayah Banteran</h5> -->
-                <img class="h-[90vh] w-full object-cover" src="/assets/img/fasilitas/Masjid_Jami_Alhidayah.jpg" alt="">
+                <img class="h-[90vh] w-full object-cover" src="assets/img/fasilitas/Masjid_Jami_Alhidayah.jpg" alt="">
             </div>
             <div class="col-span-1 space-y-4 lg:space-y-14">
                 <div class="space-y-4">
                     <!-- <h5 class="text-xl">Mts Maaruf Nu 1 Banteran</h5> -->
-                    <img class="h-[40vh] w-full object-cover" src="/assets/img/fasilitas/Mts_Maarif_Nu_1_Sumbang.jpg"
+                    <img class="h-[40vh] w-full object-cover" src="assets/img/fasilitas/Mts_Maarif_Nu_1_Sumbang.jpg"
                         alt="">
                 </div>
                 <div class="space-y-4">
                     <!-- <h5 class="text-xl">SDN Negeri 1 Banteran</h5> -->
-                    <img class="h-[40vh] w-full object-cover" src="/assets/img/fasilitas/SDN_1_Banteran.jpg" alt="">
+                    <img class="h-[40vh] w-full object-cover" src="assets/img/fasilitas/SDN_1_Banteran.jpg" alt="">
                 </div>
             </div>
         </div>

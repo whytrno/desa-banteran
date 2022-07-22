@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/output.css" rel="stylesheet">
-    <link href="/dist/font.css" rel="stylesheet">
+    <link href="dist/font.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/9138eb7436.js" crossorigin="anonymous"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
@@ -17,7 +15,7 @@
         <!-- NAVBAR -->
         <div class="flex justify-between w-full items-center">
             <div class="flex justify-center">
-                <img class="h-[65px] w-[60px]" src="/assets/img/logo/desa-logo.jpg" alt="">
+                <img class="h-[65px] w-[60px]" src="assets/img/logo/desa-logo.jpg" alt="">
             </div>
             <div x-data="{mobileNav: false}" class="md:hidden border relative">
                 <button @click="mobileNav = ! mobileNav"
@@ -90,7 +88,7 @@
         <!-- HERO -->
         <div class="w-full relative">
             <img class="h-screen md:h-[35rem] px w-full object-cover brightness-50"
-                src="/assets/img/desa/desa-gedung.jpg" alt="">
+                src="assets/img/desa/desa-gedung.jpg" alt="">
             <div class="flex items-center justify-center h-screen md:h-[35rem] px w-full absolute top-0 left-0">
                 <h1 class="text-4xl md:text-6xl text-white">Fasilitas Desa</h1>
             </div>
@@ -102,8 +100,8 @@
         <div class="flex border-b border-[#C4C4C4] text-3xl space-x-10 pb-8 relative">
             <button class="text-[#182126]">Fasilitas Desa</button>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20">
-            <img class="w-screen object-cover" src="/assets/img/desa/desa-gedung.jpg" alt="">
+        <div class="">
+            <img class="w-screen object-cover" src="assets/img/desa/desa-gedung.jpg" alt="">
         </div>
     </div>
 
