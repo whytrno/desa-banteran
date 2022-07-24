@@ -65,21 +65,21 @@
 		$ukuran = $_FILES['file']['size'];
 		$file_tmp = $_FILES['file']['tmp_name'];
 
-		$sql= mysqli_query($connection, "SELECT * FROM tb_program WHERE id_post='$id'");
+		$sql= mysqli_query($connection, "SELECT * FROM tb_program WHERE id_program='$id'");
 		$data = mysqli_fetch_array($sql);
 
 			if(!empty($gambar)) {
 				if(in_array($ekstensi, $ekstensi_boleh) === true) {
 					if($ukuran < 2000000) {
 						move_uploaded_file($file_tmp, '../assets/img/program/'. $gambar);
-						$sql = mysqli_query($connection, "UPDATE tb_program SET judul_program='$judul', artikel_program='$aritkel', kategori='$kategori', img='$gambar' WHERE id_post='$id'");
+						$sql = mysqli_query($connection, "UPDATE tb_program SET judul_program='$judul', artikel_program='$aritkel', kategori='$kategori', img='$gambar' WHERE id_program='$id'");
 						echo "<script>alert('Data Berhasil Di ubah!')</script>";
 						echo "<script>window.location.href='index.php?page=tampil-beranda'</script>";
 					}
 				} 
 			} else {
 				$gambar = $data['img'];
-				$sql = mysqli_query($connection, "UPDATE tbl_posts SET judul_program='$judul', artikel_program='$aritkel', kategori='$kategori', img='$gambar' WHERE id_post='$id'");
+				$sql = mysqli_query($connection, "UPDATE tbl_posts SET judul_program='$judul', artikel_program='$aritkel', kategori='$kategori', img='$gambar' WHERE id_program='$id'");
 				echo "<script>alert('Data Berhasil Di ubah!')</script>";
 				echo "<script>window.location.href='index.php?page=tampil-beranda'</script>";
 			}
