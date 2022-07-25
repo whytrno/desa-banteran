@@ -42,7 +42,7 @@
 		$date = $_POST['tanggal'];
 		$author = $_SESSION['pengguna'];
 		// Set Upload Gambar
-		$ekstensi_boleh = array('png', 'jpeg');
+		$ekstensi_boleh = array('png', 'jpeg', 'jpg');
 		$gambar = $_FILES['file']['name'];
 		$ex = explode('.', $gambar);
 		$ekstensi = strtolower(end($ex));

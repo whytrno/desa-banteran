@@ -8,6 +8,10 @@
 	if($sql) {
 		echo "<script>alert('Berhasil Menghapus')</script>";
 		echo "<script>window.location.href='index.php?page=tampil-berita'</script>";
+<<<<<<< HEAD
 	}else
+=======
+	}
+>>>>>>> 585510630a54ac1a953c4f756aafdfb2e5ac8065
 
  ?>

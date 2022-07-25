@@ -69,6 +69,7 @@
 		$data = mysqli_fetch_array($sql);
 
 			if(!empty($gambar)) {
+<<<<<<< HEAD
 				if($ukuran < 2000000) {
 					move_uploaded_file($file_tmp, '../assets/img/program/'. $gambar);
 					$sql = mysqli_query($connection, "UPDATE tb_program SET judul_program='$judul', artikel_program='$artikel', kategori='$kategori', img='$gambar' WHERE id_program='$id'");
@@ -78,6 +79,19 @@
 			} else {
 				$gambar = $data['img'];
 				$sql = mysqli_query($connection, "UPDATE tb_program SET judul_program='$judul', artikel_program='$artikel', kategori='$kategori', img='$gambar' WHERE id_program='$id'");
+=======
+				if(in_array($ekstensi, $ekstensi_boleh) === true) {
+					if($ukuran < 2000000) {
+						move_uploaded_file($file_tmp, '../assets/img/program/'. $gambar);
+						$sql = mysqli_query($connection, "UPDATE tb_program SET judul_program='$judul', artikel_program='$aritkel', kategori='$kategori', img='$gambar' WHERE id_program='$id'");
+						echo "<script>alert('Data Berhasil Di ubah!')</script>";
+						echo "<script>window.location.href='index.php?page=tampil-beranda'</script>";
+					}
+				} 
+			} else {
+				$gambar = $data['img'];
+				$sql = mysqli_query($connection, "UPDATE tbl_posts SET judul_program='$judul', artikel_program='$aritkel', kategori='$kategori', img='$gambar' WHERE id_program='$id'");
+>>>>>>> 585510630a54ac1a953c4f756aafdfb2e5ac8065
 				echo "<script>alert('Data Berhasil Di ubah!')</script>";
 				echo "<script>window.location.href='index.php?page=tampil-program'</script>";
 			}
