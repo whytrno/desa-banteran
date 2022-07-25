@@ -147,6 +147,30 @@
                                 </p>
                             </a>
                         </li>
+                        
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    Layanan
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="index.php?page=tampil-layanan" class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>Data Layanan</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="index.php?page=tambah-layanan" class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>Tambah Layanan</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a href="index.php?page=fasilitas" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>

@@ -50,14 +50,12 @@
 		$file_tmp = $_FILES['file']['tmp_name'];
 
 		if(!empty($gambar)) {
-			if(in_array($ekstensi, $ekstensi_boleh) === true) {
-				if($ukuran < 5000000) {
-					move_uploaded_file($file_tmp, '../assets/file/pdf/penduduk/'. $gambar);
-					$sql = mysqli_query($connection, "UPDATE tb_penduduk SET file_penduduk='$gambar'");
-					echo "<script>alert('Data Berhasil Di ubah!')</script>";
-					echo "<script>window.location.href='index.php?page=penduduk'</script>";
-				}
-			} 
+			if($ukuran < 5000000) {
+				move_uploaded_file($file_tmp, '../assets/file/pdf/penduduk/'. $gambar);
+				$sql = mysqli_query($connection, "UPDATE tb_penduduk SET file_penduduk='$gambar'");
+				echo "<script>alert('Data Berhasil Di ubah!')</script>";
+				echo "<script>window.location.href='index.php?page=penduduk'</script>";
+			}
 		} else {
 			$gambar = $data['file_penduduk'];
 			$sql = mysqli_query($connection, "UPDATE tb_penduduk SET file_penduduk='$gambar'");

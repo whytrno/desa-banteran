@@ -27,7 +27,7 @@
                         <th class="text-center"><img src="../assets/img/fasilitas/<?= $data['img'] ?>"
                                 width="180" height="50"></th>
                         <th class="text-center">
-                            <a href="index.php?page=hapus-fasilitas&id=<?= $data['img'] ?>"
+                            <a href="index.php?page=hapus-fasilitas&id=<?= $data['id_fasilitas'] ?>"
                                 class="btn btn-danger">
                                 <i class="fas fa-trash"></i>
                             </a>
@@ -49,7 +49,7 @@
                         <form method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="file">Masukkan File</label>
-                                <input type="file" name="file" class="form-control">
+                                <input type="file" name="file" class="form-control" accept="image/png, image/gif, image/jpeg">
                                 <p class="text-danger mt-1" style="font-size: 12px;">Ekstensi File yang di perbolehkan :
                                     jpg, png max. 2MB</p>
                             </div>
@@ -78,17 +78,13 @@
 		$file_tmp = $_FILES['file']['tmp_name'];
 
 		if(!empty($gambar)) {
-			if(in_array($ekstensi, $ekstensi_boleh) === true) {
-				if($ukuran < 2000000) {
-					move_uploaded_file($file_tmp, '../assets/img/fasilitas/'. $gambar);
-					$sql = mysqli_query($connection, "INSERT INTO tb_fasilitas VALUES ('', '$gambar')");
-					echo "<script>alert('Data Berhasil Ditambahkan!')</script>";
-					echo "<script>window.location.href='index.php?page=fasilitas'</script>";
-				} else {
-					echo "<script>alert('Ukuran tidak boleh > 2MB')</script>";
-				}
+			if($ukuran < 2000000) {
+				move_uploaded_file($file_tmp, '../assets/img/fasilitas/'. $gambar);
+				$sql = mysqli_query($connection, "INSERT INTO tb_fasilitas VALUES ('', '$gambar')");
+				echo "<script>alert('Data Berhasil Ditambahkan!')</script>";
+				echo "<script>window.location.href='index.php?page=fasilitas'</script>";
 			} else {
-				echo "<script>alert('Ekstensi tidak sesuai')</script>";
+				echo "<script>alert('Ukuran tidak boleh > 2MB')</script>";
 			}
 		} else {
 			echo "<script>alert('Mohon memilih file yang akan di upload')</script>";

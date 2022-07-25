@@ -2,7 +2,7 @@
 
 	$id = $_GET['id'];
 
-	$sql = mysqli_query($connection, "SELECT * FROM tb_berita WHERE id_post='$id'");
+	$sql = mysqli_query($connection, "SELECT * FROM tb_berita WHERE id_berita='$id'");
 	$data = mysqli_fetch_array($sql);
 
  ?>
@@ -28,7 +28,7 @@
 						</div>
 						<div class="col-lg-6 mt-3">
 							<label for="file">Masukkan File Gambar</label>
-							<input type="file" name="file" class="form-control" value="<?= $data['img'] ?>">
+							<input type="file" name="file" class="form-control" value="<?= $data['img'] ?>" accept="image/png, image/gif, image/jpeg">
 							<input type="hidden" name="tanggal" value="<?php echo date("Y-m-d"); ?>">
 						</div>
 						<div class="col-lg-12 mt-3">
@@ -49,9 +49,9 @@
 
 	if(isset($_POST['submit'])) {
 		$id = $_GET['id'];
-		$judul = $_POST['judul_berita'];
+		$judul = $_POST['judul'];
 		$date = $_POST['tanggal'];
-		$artikel = $_POST['artikel_berita'];
+		$artikel = $_POST['artikel'];
 		$pengarang = $_SESSION['pengguna'];
 		// Set Upload Gambar
 		$ekstensi_boleh = array('png', 'jpg');
@@ -61,22 +61,20 @@
 		$ukuran = $_FILES['file']['size'];
 		$file_tmp = $_FILES['file']['tmp_name'];
 
-		$sql= mysqli_query($connection, "SELECT * FROM tb_berita WHERE id_post='$id'");
+		$sql= mysqli_query($connection, "SELECT * FROM tb_berita WHERE id_berita='$id'");
 		$data = mysqli_fetch_array($sql);
 
 			if(!empty($gambar)) {
-				if(in_array($ekstensi, $ekstensi_boleh) === true) {
-					if($ukuran < 2000000) {
-						move_uploaded_file($file_tmp, '../assets/img/berita/'. $gambar);
-						$sql = mysqli_query($connection, "UPDATE tb_berita SET judul_berita='$judul', artikel_berita='$artikel', pengarang='$pengguna', img='$gambar' WHERE id_post='$id'");
-						echo "<script>alert('Data Berhasil Di ubah!')</script>";
-						echo "<script>window.location.href='index.php?page=tampil-berita'</script>";
-						// header("location: index.php?page=tampil-berita");
-					}
-				} 
+				if($ukuran < 2000000) {
+					move_uploaded_file($file_tmp, '../assets/img/berita/'. $gambar);
+					$sql = mysqli_query($connection, "UPDATE tb_berita SET judul_berita='$judul', artikel_berita='$artikel', pengarang='$pengarang', img='$gambar' WHERE id_berita='$id'");
+					echo "<script>alert('Data Berhasil Di ubah!')</script>";
+					echo "<script>window.location.href='index.php?page=tampil-berita'</script>";
+					// header("location: index.php?page=tampil-berita");
+				}
 			} else {
 				$gambar = $data['img'];
-				$sql = mysqli_query($connection, "UPDATE tb_berita SET judul_berita='$judul', artikel_berita='$artikel', pengarang='$pengguna', img='$gambar' WHERE id_post='$id'");
+				$sql = mysqli_query($connection, "UPDATE tb_berita SET judul_berita='$judul', artikel_berita='$artikel', pengarang='$pengarang', img='$gambar' WHERE id_berita='$id'");
 				echo "<script>alert('Data Berhasil Di ubah!')</script>";
 				echo "<script>window.location.href='index.php?page=tampil-berita'</script>";
 			}

@@ -157,7 +157,7 @@
 			} else {
 				if(!empty($pass)) {
 					$gambar = $data['img'];
-					$sql = mysqli_query($connection, "UPDATE tb_users SET username='$user', password='.md5($pass).', nama_pengguna='$pengguna', img='$gambar' WHERE id_user='$id'");
+					$sql = mysqli_query($connection, "UPDATE tb_users SET username='$user', password='".md5($pass)."', nama_pengguna='$pengguna', img='$gambar' WHERE id_user='$id'");
 					echo "<script>alert('Data Berhasil Di ubah!')</script>";
 					echo "<script>window.location.href='index.php?page=user'</script>";
 				} else {
@@ -177,7 +177,7 @@
 		$tingkat_user = $_POST['tingkat_user'];
 
 		// Set Upload Gambar
-		$ekstensi_boleh = array('png', 'jpeg');
+		$ekstensi_boleh = array('png', 'jpeg', 'jpg');
 		$gambar = $_FILES['file']['name'];
 		$ex = explode('.', $gambar);
 		$ekstensi = strtolower(end($ex));

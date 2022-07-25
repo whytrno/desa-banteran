@@ -8,6 +8,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/9138eb7436.js" crossorigin="anonymous"></script>
     <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+    
+    <link rel="icon" type="image/x-icon" href="assets/img/logo/desa-logo.jpg">
+  	<title>Desa Banteran || 
+      <?php
+    	if(isset($_GET['page'])){
+          echo ucfirst($_GET['page']);
+        }else{
+          echo 'Beranda';
+        }
+      ?>
+  	</title>
 </head>
 
 <body>
@@ -37,7 +48,7 @@
                             </a>
                             <div x-show="mobileLayanan" class="grid pt-1 gap-1 pl-5">
                                 <a href="?page=fasilitas" class="hover:text-[#182126]">Fasilitas</a>
-                                <a href="?page=tentang-desa" class="hover:text-[#182126]">Tentang Desa</a>
+                                <a href="?page=layanan" class="hover:text-[#182126]">Layanan Desa</a>
                             </div>
                         </div>
                         <div x-data="{mobileTentang: false}">
@@ -47,15 +58,15 @@
                                 </svg>
                             </a>
                             <div x-show="mobileTentang" class="grid pt-1 gap-1 pl-5">
-                                <a href="?page=tentang-kami" class="hover:text-[#182126]">Tentang Kami</a>
-                                <a href="?page=struktur-organisasi" class="hover:text-[#182126]">Struktur Organisasi</a>
+                                <a href="?page=tentang" class="hover:text-[#182126]">Tentang Kami</a>
+                                <a href="?page=struktur" class="hover:text-[#182126]">Struktur Organisasi</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div x-data="{layanan: false, tentang: false}" class="hidden md:block md:flex space-x-10 text-lg text-[#5c6b74]">
-                <a href="?page=beranda" class="bg-white inline-block border-l border-t border-r rounded-thover:text-[#182126] rounded hover:border-gray-200 hover:bg-gray-200 py-2 px-4 font-bold">Beranda</a>
+                <a href="?page=beranda" class="bg-white inline-block border-l border-t border-r rounded-t hover:text-[#182126] rounded hover:border-gray-200 hover:bg-gray-200 py-2 px-4 font-bold">Beranda</a>
                 <a href="?page=berita" class="bg-white inline-block py-2 px-4 hover:text-[#182126] rounded hover:border-gray-200 hover:bg-gray-200 font-semibold">Berita</a>
                 <a href="?page=program" class="bg-white inline-block py-2 px-4 hover:text-[#182126] rounded hover:border-gray-200 hover:bg-gray-200 font-semibold">Program</a>
                 <div class="relative">

@@ -22,7 +22,7 @@
             foreach ($sql as $data) : ?>
                 <div class="space-y-2 md:space-y-5">
                     <img src="assets/img/fasilitas/<?= $data['img'] ?>" alt="" class="w-full h-full object-cover">
-                    <h5 class="text-center text-xl"><?= $data['img'] ?></h5>
+                    <h5 class="text-center text-xl"><?= str_replace('.jpg', '', str_replace('_', ' ', $data['img'])) ?></h5>
                 </div>
             <?php endforeach; ?>
 

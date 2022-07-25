@@ -8,7 +8,7 @@
 
 	if($sql) {
 		echo "<script>alert('Berhasil Menghapus')</script>";
-		echo "<script>window.location.href='index.php?page=galeri'</script>";
+		echo "<script>window.location.href='index.php?page=tampil-fasilitas'</script>";
 	}
 
  ?>

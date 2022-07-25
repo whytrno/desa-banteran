@@ -51,11 +51,11 @@
 <?php 
 
 	if(isset($_POST['submit'])) {
-		$id = $_GET['id_program'];
-		$judul = $_POST['judul_program'];
+		$id = $_GET['id'];
+		$judul = $_POST['judul'];
 		$kategori = $_POST['kategori'];
 		$date = $_POST['tanggal'];
-		$artikel = $_POST['artikel_program'];
+		$artikel = $_POST['artikel'];
 		$author = $_SESSION['pengguna'];
 		// Set Upload Gambar
 		$ekstensi_boleh = array('png', 'jpg');
@@ -65,23 +65,21 @@
 		$ukuran = $_FILES['file']['size'];
 		$file_tmp = $_FILES['file']['tmp_name'];
 
-		$sql= mysqli_query($connection, "SELECT * FROM tb_program WHERE id_post='$id'");
+		$sql= mysqli_query($connection, "SELECT * FROM tb_program WHERE id_program='$id'");
 		$data = mysqli_fetch_array($sql);
 
 			if(!empty($gambar)) {
-				if(in_array($ekstensi, $ekstensi_boleh) === true) {
-					if($ukuran < 2000000) {
-						move_uploaded_file($file_tmp, '../assets/img/program/'. $gambar);
-						$sql = mysqli_query($connection, "UPDATE tb_program SET judul_program='$judul', artikel_program='$aritkel', kategori='$kategori', img='$gambar' WHERE id_post='$id'");
-						echo "<script>alert('Data Berhasil Di ubah!')</script>";
-						echo "<script>window.location.href='index.php?page=tampil-beranda'</script>";
-					}
-				} 
+				if($ukuran < 2000000) {
+					move_uploaded_file($file_tmp, '../assets/img/program/'. $gambar);
+					$sql = mysqli_query($connection, "UPDATE tb_program SET judul_program='$judul', artikel_program='$artikel', kategori='$kategori', img='$gambar' WHERE id_program='$id'");
+					echo "<script>alert('Data Berhasil Di ubah!')</script>";
+					echo "<script>window.location.href='index.php?page=tampil-program'</script>";
+				}
 			} else {
 				$gambar = $data['img'];
-				$sql = mysqli_query($connection, "UPDATE tbl_posts SET judul_program='$judul', artikel_program='$aritkel', kategori='$kategori', img='$gambar' WHERE id_post='$id'");
+				$sql = mysqli_query($connection, "UPDATE tb_program SET judul_program='$judul', artikel_program='$artikel', kategori='$kategori', img='$gambar' WHERE id_program='$id'");
 				echo "<script>alert('Data Berhasil Di ubah!')</script>";
-				echo "<script>window.location.href='index.php?page=tampil-beranda'</script>";
+				echo "<script>window.location.href='index.php?page=tampil-program'</script>";
 			}
 	}
 

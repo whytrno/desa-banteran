@@ -57,6 +57,22 @@ require_once "template/header.php";
         case 'edit-berita':
           include "berita/edit-berita.php";
           break;
+          
+        case 'tampil-layanan':
+          include "layanan/data-layanan.php";
+          break;
+
+        case 'tambah-layanan':
+          include "layanan/tambah-layanan.php";
+          break;
+
+        case 'hapus-layanan':
+          include "layanan/hapus-layanan.php";
+          break;
+
+        case 'edit-layanan':
+          include "layanan/edit-layanan.php";
+          break;
 
         case 'penduduk':
           include "penduduk/index.php";

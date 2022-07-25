@@ -1,0 +1,4 @@
+[24-Jul-2022 14:15:00 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'lazycode_desabanteran'@'localhost' (using password: YES) in /home/lazycode/desabanteran.my.id/desa-banteran/config/koneksi.php on line 8
+[24-Jul-2022 14:15:00 UTC] PHP Warning:  Attempt to read property "connect_errno" on bool in /home/lazycode/desabanteran.my.id/desa-banteran/config/koneksi.php on line 9
+[24-Jul-2022 14:15:18 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'lazycode_desabanteran'@'localhost' (using password: YES) in /home/lazycode/desabanteran.my.id/desa-banteran/config/koneksi.php on line 8
+[24-Jul-2022 14:15:18 UTC] PHP Warning:  Attempt to read property "connect_errno" on bool in /home/lazycode/desabanteran.my.id/desa-banteran/config/koneksi.php on line 9

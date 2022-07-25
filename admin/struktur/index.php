@@ -11,7 +11,7 @@
 				<h5>Data Struktur Organisasi</h5>
 			</div>
 			<div class="card-body">
-				<embed type="application/pdf" src="../assets/file/pdf/struktur/<?= $data['file_struktur'] ?>" style="width: 100%;height: 30vh;"></embed>
+				<img src="assets/img/struktur/<?= $data['file_struktur'] ?>" style="width: 100%;height: 30vh;"></img>
 			</div>
 		</div>
 	</div>
@@ -24,9 +24,9 @@
 				<form method="POST" enctype="multipart/form-data">
 					<div class="row">
 						<div class="col-lg-12 mt-3">
-							<label for="file">Masukkan File PDF</label>
+							<label for="file">Masukkan File Gambar</label>
 							<input type="file" name="file" class="form-control" value="<?= $data['file_struktur'] ?>">
-							<p class="text-danger mt-2" style="font-size: 12px;">File harus format : pdf. Ukuran max 5MB</p>
+							<p class="text-danger mt-2" style="font-size: 12px;">File harus format : jpg, png. Ukuran max 5MB</p>
 						</div>
 						<div class="col-lg-12 mt-1">
 							<button name="submit" name="submit" class="btn btn-primary btn-block">Edit Data</button>
@@ -50,19 +50,18 @@
 		$file_tmp = $_FILES['file']['tmp_name'];
 
 		if(!empty($gambar)) {
-			if(in_array($ekstensi, $ekstensi_boleh) === true) {
-				if($ukuran < 5000000) {
-					move_uploaded_file($file_tmp, '../assets/file/pdf/struktur/'. $gambar);
-					$sql = mysqli_query($connection, "UPDATE tb_struktur SET file_struktur='$gambar'");
-					echo "<script>alert('Data Berhasil Di ubah!')</script>";
-					echo "<script>window.location.href='index.php?page=struktur'</script>";
-				}
-			} 
+			if($ukuran < 5000000) {
+				move_uploaded_file($file_tmp, 'assets/img/struktur/'. $gambar);
+				$sql = mysqli_query($connection, "UPDATE tb_struktur SET file_struktur='$gambar'");
+				echo "<script>alert('Data Berhasil Di ubah!')</script>";
+				echo "<script>window.location.href='index.php?page=struktur-organisasi'</script>";
+			}
 		} else {
 			$gambar = $data['file_struktur'];
 			$sql = mysqli_query($connection, "UPDATE tb_struktur SET file_struktur='$gambar'");
 			echo "<script>alert('Data Berhasil Di ubah!')</script>";
-			echo "<script>window.location.href='index.php?page=struktur'</script>";
+			echo "<script>window.location.href='index.php?page=struktur-organisasi'</script>";
 		}
 	}
+	
  ?>

@@ -7,7 +7,7 @@
         <?php
         $sql = mysqli_query($connection, "SELECT * FROM tb_berita ORDER BY id_berita");
         $no = 1;
-        foreach ($sql as $data) : ?>
+        foreach ($sql as $data) { ?>
             <div class="grid grid-cols-3 gap-5 md:gap-14 py-8 md:px-10 lg:px-14 border-b border-[#C4C4C4]">
                 <div class="col-span-3 md:col-span-1">
                     <h1 class="text-md md:text-xl">#0<?= $no++ ?> Berita</h1>
@@ -19,10 +19,10 @@
                     </p>
                 </div>
                 <div class="md:justify-self-end col-span-3 md:col-span-1">
-                    <img class="h-[50h] md:h-[25vh] w-full object-cover" src="assets/img/berita/<?= $data['img'] ?>" alt="">
+                    <img class="h-[50h] md:h-[25vh] w-96 object-cover" src="assets/img/berita/<?= $data['img'] ?>" alt="">
                 </div>
             </div>
-        <?php endforeach; ?>
+        <?php } ?>
 
     </div>
 </div>
